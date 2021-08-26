@@ -44,7 +44,7 @@ db.run("INSERT INTO reports (kmom, info) VALUES (?, ?)",
 
 db.run("INSERT INTO reports (kmom, info) VALUES (?, ?)",
     "Kmom02",
-    "GitHub repo frontend: 'https://github.com/Fridasaralinnea/jsramverk-me-frontend'. GitHub repo backend: -- README.md - backend: **npm init npm install express cors morgan --save npm install -g nodemon npm install sqlite3 --save //install as admin in PowerShell npm install --global --production windows-build-tools npm install bcryptjs --save npm install jsonwebtoken --save ", (err) => {
+    "GitHub repo frontend: 'https://github.com/Fridasaralinnea/jsramverk-me-frontend'. GitHub repo backend: https://github.com/Fridasaralinnea/jsramverk-backend README.md - backend: **npm init npm install express cors morgan --save npm install -g nodemon npm install sqlite3 --save //install as admin in PowerShell npm install --global --production windows-build-tools npm install bcryptjs --save npm install jsonwebtoken --save ", (err) => {
         if (err) {
             // err
         }
