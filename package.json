@@ -1,14 +1,14 @@
 {
-  "name": "me-backend-express",
+  "name": "jsramverk-backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "**npm init",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js",
     "production": "NODE_ENV='production' node app.js"
   },
-  "author": "",
+  "author": "Frida Larsson",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -24,5 +24,13 @@
     "eslint": "^7.10.0",
     "eslint-plugin-react": "^7.21.3",
     "eslint-plugin-vue": "^7.0.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fridasaralinnea/jsramverk-backend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Fridasaralinnea/jsramverk-backend/issues"
+  },
+  "homepage": "https://github.com/Fridasaralinnea/jsramverk-backend#readme"
 }
