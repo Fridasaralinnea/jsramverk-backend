@@ -1,6 +1,6 @@
 const express = require('express');
 const { body } = require('express-validator');
-var router = express.Router();
+const router = express.Router();
 const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('./db/texts.sqlite');
 const jwt = require('jsonwebtoken');
