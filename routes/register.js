@@ -12,7 +12,6 @@ const bcrypt = require('bcryptjs');
 router.post(
     "/",
     body('email').isEmail().normalizeEmail(),
-    body('password').trim().escape(),
     (req, res, next) => {
     // console.log(req);
     var email = req.body.email;
