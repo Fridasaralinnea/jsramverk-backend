@@ -13,7 +13,7 @@ const login = require('./routes/login');
 const edit = require('./routes/edit');
 
 const app = express();
-const port = 1337;
+const port = 8333;
 
 const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('./db/texts.sqlite');
