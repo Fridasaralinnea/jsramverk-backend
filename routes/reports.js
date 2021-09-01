@@ -59,10 +59,11 @@ router.get("/week/3", (req, res) => {
                 }
             });
         }
+        console.log("Kmom03:");
         console.log(res);
         console.log("info: ", res.info);
-        res.info.unescape();
-        console.log("info: ", res.info);
+        // res.info.unescape();
+        // console.log("info: ", res.info);
         res.json({ data: rows[0] });
     })
 });
