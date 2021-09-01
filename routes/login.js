@@ -15,7 +15,6 @@ const jwtSecret = config.jwtSecret;
 router.post(
     "/",
     body('email').isEmail().normalizeEmail(),
-    body('password').trim().escape(),
     (req, res, next) => {
     console.log("Login route reached for enpoint '/' using POST method with email: ", req.body.email, " and password: ", req.body.password);
     // const jwt = require('jsonwebtoken');

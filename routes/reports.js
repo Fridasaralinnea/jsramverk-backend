@@ -58,6 +58,7 @@ router.get("/week/3", (req, res) => {
                 }
             });
         }
+        console.log(res);
         res.json({ data: rows[0] });
     })
 });
