@@ -1,4 +1,5 @@
 const express = require('express');
+const { body } = require('express-validator');
 const router = express.Router();
 const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('./db/texts.sqlite');
@@ -59,6 +60,9 @@ router.get("/week/3", (req, res) => {
             });
         }
         console.log(res);
+        console.log("info: ", res.info);
+        res.info.unescape();
+        console.log("info: ", res.info);
         res.json({ data: rows[0] });
     })
 });
