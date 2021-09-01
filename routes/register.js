@@ -8,7 +8,11 @@ const bcrypt = require('bcryptjs');
 // const saltRounds = 10;
 
 /* POST to register new user. */
-router.post("/", (req, res, next) => {
+router.post(
+    "/",
+    body('email').isEmail().normalizeEmail(),
+    body('password').trim().escape(),
+    (req, res, next) => {
     // console.log(req);
     var email = req.body.email;
     var password = req.body.password;
