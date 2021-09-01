@@ -12,3 +12,10 @@ npm install --global --production windows-build-tools
 npm install bcryptjs --save
 
 npm install jsonwebtoken --save
+
+Routes:
+/ - index
+/reports - reports
+/reports/edit - edit
+/register - register
+/login - login

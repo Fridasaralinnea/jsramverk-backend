@@ -1,4 +1,5 @@
-var express = require('express');
+const express = require('express');
+const { body } = require('express-validator');
 var router = express.Router();
 const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('./db/texts.sqlite');
@@ -158,7 +159,11 @@ router.get("/Kmom10", (req, res) => {
 });
 
 
-router.post("/", (req, res) => {
+router.post(
+    "/",
+    body('kmom').trim().escape(),
+    body('info').trim().escape(),
+    (req, res) => {
     console.log(res.req.body);
     var kmom = res.req.body.kmom;
     var info = res.req.body.info;
