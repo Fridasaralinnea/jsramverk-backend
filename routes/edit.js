@@ -161,8 +161,8 @@ router.get("/Kmom10", (req, res) => {
 
 router.post(
     "/",
-    body('kmom').trim().encodeURIComponent(),
-    body('info').trim().encodeURIComponent(),
+    body('kmom').trim(),
+    body('info').trim(),
     (req, res) => {
     console.log(res.req.body);
     var kmom = res.req.body.kmom;

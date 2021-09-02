@@ -59,11 +59,6 @@ router.get("/week/3", (req, res) => {
                 }
             });
         }
-        console.log("Info: ", rows[0].info);
-        rows[0].info.unescape();
-        console.log("Info: ", rows[0].info);
-        // res.info.unescape();
-        // console.log("SQL: ", rows[0]);
         res.json({ data: rows[0] });
     })
 });
