@@ -1,29 +1,10 @@
 const express = require('express');
 const { body } = require('express-validator');
 const router = express.Router();
-const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database('./db/texts.sqlite');
-const jwt = require('jsonwebtoken');
-const secret = process.env.JWT_SECRET;
-
-// /* GET edit. */
-// router.get("/reports/edit", (req, res) => {
-//     var sql = `SELECT * FROM reports`;
-//
-//     db.all(sql, (err, rows) => {
-//         if (err) {
-//             return res.status(500),json({
-//                 errors: {
-//                     status: 500,
-//                     source: "/reports/edit",
-//                     title: "Database error",
-//                     detail: err.message
-//                 }
-//             });
-//         }
-//         res.json({ data: rows });
-//     })
-// });
+// const sqlite3 = require('sqlite3').verbose();
+const db = require("../db/database.js");
+// const jwt = require('jsonwebtoken');
+// const secret = process.env.JWT_SECRET;
 
 /* GET Kmom01. */
 router.get("/Kmom01", (req, res) => {
@@ -31,7 +12,7 @@ router.get("/Kmom01", (req, res) => {
 
     db.all(sql, (err, rows) => {
         if (err) {
-            return res.status(500),json({
+            return res.status(500).json({
                 errors: {
                     status: 500,
                     source: "/reports/edit",
@@ -50,7 +31,7 @@ router.get("/Kmom02", (req, res) => {
 
     db.all(sql, (err, rows) => {
         if (err) {
-            return res.status(500),json({
+            return res.status(500).json({
                 errors: {
                     status: 500,
                     source: "/reports/edit",
@@ -69,7 +50,7 @@ router.get("/Kmom03", (req, res) => {
 
     db.all(sql, (err, rows) => {
         if (err) {
-            return res.status(500),json({
+            return res.status(500).json({
                 errors: {
                     status: 500,
                     source: "/reports/edit",
@@ -88,7 +69,7 @@ router.get("/Kmom04", (req, res) => {
 
     db.all(sql, (err, rows) => {
         if (err) {
-            return res.status(500),json({
+            return res.status(500).json({
                 errors: {
                     status: 500,
                     source: "/reports/edit",
@@ -107,7 +88,7 @@ router.get("/Kmom05", (req, res) => {
 
     db.all(sql, (err, rows) => {
         if (err) {
-            return res.status(500),json({
+            return res.status(500).json({
                 errors: {
                     status: 500,
                     source: "/reports/edit",
@@ -126,7 +107,7 @@ router.get("/Kmom06", (req, res) => {
 
     db.all(sql, (err, rows) => {
         if (err) {
-            return res.status(500),json({
+            return res.status(500).json({
                 errors: {
                     status: 500,
                     source: "/reports/edit",
@@ -145,7 +126,7 @@ router.get("/Kmom10", (req, res) => {
 
     db.all(sql, (err, rows) => {
         if (err) {
-            return res.status(500),json({
+            return res.status(500).json({
                 errors: {
                     status: 500,
                     source: "/reports/edit",

@@ -1,2 +1,7 @@
 node_modules/
 *.sqlite
+
+# Test coverage directory
+coverage
+
+config/config.js

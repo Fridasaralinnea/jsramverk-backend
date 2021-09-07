@@ -2,9 +2,8 @@ const express = require("express");
 const morgan = require('morgan');
 const cors = require('cors');
 const bodyParser = require("body-parser");
-const bcrypt = require('bcryptjs');
-// const sqlite3 = require('sqlite3').verbose();
-const jwt = require('jsonwebtoken');
+// const bcrypt = require('bcryptjs');
+// const jwt = require('jsonwebtoken');
 
 const index = require('./routes/index');
 const reports = require('./routes/reports');
@@ -15,8 +14,8 @@ const edit = require('./routes/edit');
 const app = express();
 const port = 8333;
 
-const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database('./db/texts.sqlite');
+// const sqlite3 = require('sqlite3').verbose();
+// const db = require("./db/database.js");
 
 app.use(cors());
 
@@ -36,7 +35,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x
 
 
 
-db.close();
+// db.close();
 
 
 
@@ -83,6 +82,7 @@ app.use((err, req, res, next) => {
 });
 
 // Start up server
-app.listen(port, () => console.log(`Example API listening on port ${port}!`));
+// app.listen(port, () => console.log(`Example API listening on port ${port}!`));
+const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
-// module.exports = server;
+module.exports = server;

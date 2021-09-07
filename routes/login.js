@@ -3,8 +3,8 @@
 const express = require('express');
 const { body } = require('express-validator');
 const router = express.Router();
-const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database('./db/texts.sqlite');
+// const sqlite3 = require('sqlite3').verbose();
+const db = require("../db/database.js");
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const config = require('../config/config.js');
@@ -14,20 +14,26 @@ const jwtSecret = config.jwtSecret;
 /* POST login user. */
 router.post(
     "/",
-    body('email').isEmail().normalizeEmail(),
-    (req, res, next) => {
+    body('email').isEmail(),
+    (req, res) => {
     console.log("Login route reached for enpoint '/' using POST method with email: ", req.body.email, " and password: ", req.body.password);
     // const jwt = require('jsonwebtoken');
     var email = req.body.email;
     var pwd = req.body.password;
     var sql = `SELECT * FROM users WHERE email = ?`;
 
-    db.get(sql, req.body.email, (err, row) => {
-        if (err) {
+    db.get(sql, email, (err, row) => {
+        // console.log("SQL get");
+        // console.log(err);
+        // console.log(row);
+        if (err || !row) {
+            console.log("Email invalid");
              return res.status(400).json({
-                data: {
-                    msg: "Could not find user: " + email
-                }
+                 errors: {
+                     status: 400,
+                     title: "Email invalid",
+                     detail: "Could not find user: " + email
+                 }
             });
         }
 
@@ -50,8 +56,10 @@ router.post(
             } else {
                 console.log("Error during login");
                 return res.status(400).json({
-                    data: {
-                        msg: "Error during login"
+                    errors: {
+                        status: 400,
+                        title: "Login Error",
+                        detail: "Error during login"
                     }
                 });
             }
@@ -59,18 +67,6 @@ router.post(
     });
 
 });
-
-// bcrypt.compare(myPlaintextPassword, hash, function(err, res) {
-//     // res innehåller nu true eller false beroende på om det är rätt lösenord.
-// });
-
-// jwt.verify(token, process.env.JWT_SECRET, function(err, decoded) {
-//     if (err) {
-//         // not a valid token
-//     }
-//
-//     // valid token
-// });
 
 
 module.exports = router;
