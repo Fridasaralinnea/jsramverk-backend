@@ -4,7 +4,5 @@ node_modules/
 # Test coverage directory
 coverage
 
-config/config.js
-
 # nyc test coverage
 .nyc_output
