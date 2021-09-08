@@ -1,3 +1,5 @@
+[![Build Status](https://app.travis-ci.com/Fridasaralinnea/jsramverk-backend.svg?branch=main)](https://app.travis-ci.com/Fridasaralinnea/jsramverk-backend)
+
 **npm init
 
 npm install express cors morgan --save
